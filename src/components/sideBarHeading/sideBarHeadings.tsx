@@ -1,7 +1,7 @@
-import { Component, ReactNode, MouseEvent } from "react";
+import throttle from "lodash/throttle";
+import { Component, MouseEvent, ReactNode } from "react";
 import { muoviPagina } from "../../functions/muoviAllaPosizione";
 import stile from "./sideBarHeading.module.scss";
-import throttle from "lodash/throttle";
 
 interface headings {
   slug: string;

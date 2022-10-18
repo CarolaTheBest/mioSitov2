@@ -1,8 +1,8 @@
 import { Component, createRef, ReactNode, RefObject } from "react";
 import { interagisciConScorrimento, interagisciInvertito } from "../../functions/interagisci";
-import stile from "./stile2.module.scss";
 import aereo from "./immagini/aereo.svg";
 import nuvola from "./immagini/nuvola.svg";
+import stile from "./stile2.module.scss";
 
 export class ScritteCheVannoGiu extends Component<any, any> {
   ref: RefObject<any> = createRef();

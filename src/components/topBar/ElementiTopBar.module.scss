@@ -1,49 +1,49 @@
 @import "../../scss/variabili.scss";
 
 :global(html.night) {
-  .bottoni {
-    color: $coloreTestoScuro;
+	.bottoni {
+		color: $coloreTestoScuro;
 
-    &:hover {
-      color: white;
-    }
-  }
+		&:hover {
+			color: white;
+		}
+	}
 
-  .muovi {
-    background-color: ligthen(rgba($colorePrincipale, 0.2), 50);
-  }
+	.muovi {
+		background-color: ligthen(rgba($colorePrincipale, 0.2), 50);
+	}
 }
 
 .wrapper {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .muovi {
-  background-color: rgba($colorePrincipale, 0.2);
-  left: 0;
-  position: absolute;
-  transition: all 0.2s ease-in-out;
-  z-index: -1;
-  opacity: 0;
+	background-color: rgba($colorePrincipale, 0.2);
+	left: 0;
+	position: absolute;
+	transition: all 0.2s ease-in-out;
+	z-index: -1;
+	opacity: 0;
 }
 
 .bottoni {
-  display: inline-block;
-  padding: 16px 12px;
-  text-decoration: none;
-  font-weight: 400;
-  transition: font-wight $velocitaNormaleTransazione ease;
-  outline: none;
-  cursor: pointer;
-  color: $coloreTestoMoltoChiaro;
+	display: inline-block;
+	padding: 16px 12px;
+	text-decoration: none;
+	font-weight: 400;
+	transition: font-wight $velocitaNormaleTransazione ease;
+	outline: none;
+	cursor: pointer;
+	color: $coloreTestoMoltoChiaro;
 
-  &:hover {
-    color: black;
-  }
+	&:hover {
+		color: black;
+	}
 }
 
 .comune {
-  text-transform: capitalize;
-  border-radius: $bordiBottoni;
+	text-transform: capitalize;
+	border-radius: $borderRarius;
 }

@@ -1,12 +1,12 @@
-import { visit } from "unist-util-visit";
-import { filter } from "unist-util-filter";
-import uniq from "lodash/uniq";
-import { h } from "hastscript";
-import { toHast } from "mdast-util-to-hast";
-import { visitParents } from "unist-util-visit-parents";
-import slash from "slash";
 import { readFileSync } from "fs";
-import { text, link } from "mdast-builder";
+import { h } from "hastscript";
+import uniq from "lodash/uniq";
+import { link, text } from "mdast-builder";
+import { toHast } from "mdast-util-to-hast";
+import slash from "slash";
+import { filter } from "unist-util-filter";
+import { visit } from "unist-util-visit";
+import { visitParents } from "unist-util-visit-parents";
 
 const rawdata = readFileSync("dizionario.json");
 const dizionario = JSON.parse(rawdata as any);
@@ -68,6 +68,7 @@ export function boxDefinizione() {
 }
 
 export function cambioTextDirectives() {
+	// @ts-ignore
 	return (tree) => {
 		visit(tree, "textDirective", (node) => {
 			if (node.name === "d") {
@@ -120,8 +121,10 @@ export function codiceInline() {
 	};
 }
 
+// TODO aggiungere l'auto layout
+
 export function nascondiTestata() {
-	return (tree: any) => {
+	return (tree: any, data: { data: any }) => {
 		return filter(tree, (node: any) => node.tagName !== "h1");
 	};
 }

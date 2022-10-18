@@ -3,52 +3,53 @@ import { ScritteSconce } from "./scritteSconce";
 ---
 
 <div class="wrapper">
-  <div class="box">
-    <div class="scritte">
-      <span class="titoletto"
-        >E tutti pensano: <span
-          ><ScritteSconce client:idle numeroLettere={3} prima="c" dopo="o" />
-        </span> quanto è figo!</span
-      >
-      <p class="piccolo">Grazie Astro 🚀</p>
-    </div>
-  </div>
+	<div class="box">
+		<div class="scritte">
+			<span class="titoletto"
+				>E tutti pensano: <span
+					><ScritteSconce client:idle numeroLettere={3} prima="c" dopo="o" />
+				</span> quanto è figo!</span
+			>
+			<p class="piccolo">Grazie Astro 🚀</p>
+		</div>
+	</div>
 </div>
 
 <style lang="scss">
-  @import "../scss/variabili.scss";
+	@import "../scss/variabili.scss";
 
-  .wrapper {
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
+	.wrapper {
+		flex-direction: column;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
 
-  .box {
-    border-radius: $bordiBottoni;
-    border: 1px solid rgba($colorePrincipale, 0.3);
-    padding: 3rem 3.5rem;
-    background-color: white;
-    box-shadow: 0px 0px 0.7px rgba(0, 0, 0, 0.014), 0px 0px 1.8px rgba(0, 0, 0, 0.02),
-      0px 0px 3.4px rgba(0, 0, 0, 0.025), 0px 0px 6px rgba(0, 0, 0, 0.03),
-      0px 0px 11.3px rgba(0, 0, 0, 0.036), 0px 0px 27px rgba(0, 0, 0, 0.05);
+	.box {
+		border-radius: $borderRarius;
+		border: 1px solid rgba($colorePrincipale, 0.3);
+		padding: 3rem 3.5rem;
+		background-color: white;
+		box-shadow: 0px 0px 0.7px rgba(0, 0, 0, 0.014),
+			0px 0px 1.8px rgba(0, 0, 0, 0.02), 0px 0px 3.4px rgba(0, 0, 0, 0.025),
+			0px 0px 6px rgba(0, 0, 0, 0.03), 0px 0px 11.3px rgba(0, 0, 0, 0.036),
+			0px 0px 27px rgba(0, 0, 0, 0.05);
 
-    @include scuro {
-      & * {
-        color: $coloreTesto;
-      }
-    }
-  }
+		@include scuro {
+			& * {
+				color: $coloreTesto;
+			}
+		}
+	}
 
-  .titoletto {
-    font-size: 2.25rem;
-  }
+	.titoletto {
+		font-size: 2.25rem;
+	}
 
-  .piccolo {
-    font-size: 0.8rem;
-    color: $coloreTestoMoltoChiaro;
-    margin-bottom: 0;
-  }
+	.piccolo {
+		font-size: 0.8rem;
+		color: $coloreTestoMoltoChiaro;
+		margin-bottom: 0;
+	}
 </style>

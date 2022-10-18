@@ -1,0 +1,38 @@
+---
+import type { Documento } from "../../types/alberoAppunti";
+import Boxcarino from "./boxcarino.astro";
+import Esercizio from "./esercizio.astro";
+const doc: Documento = Astro.props.documento;
+---
+
+<div class="box">
+	<Boxcarino data={doc.data} />
+	{
+		doc.children?.length > 0 ? (
+			<div class="plusWrapper">
+				<span class="titolo">📒 Esercizi</span>
+				<div class="plus">
+					{doc.children?.map((esercizio) => (
+						<Esercizio esercizio={esercizio} />
+					))}
+				</div>
+			</div>
+		) : null
+	}
+</div>
+
+<style lang="scss">
+	.plusWrapper {
+		padding-left: 3em;
+		margin-bottom: 3rem;
+	}
+
+	.plus {
+		border-left: 3px solid grey;
+		padding-left: 1rem;
+	}
+
+	.box {
+		margin-top: 1rem;
+	}
+</style>

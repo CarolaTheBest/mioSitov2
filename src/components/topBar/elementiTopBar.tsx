@@ -1,6 +1,6 @@
 import React, { Component, RefObject } from "react";
-import stile from "./ElementiTopBar.module.scss";
 import { topBarImpostazioni } from "../../settings/topBar";
+import stile from "./ElementiTopBar.module.scss";
 
 export class ElementiTopBar extends Component {
   muoviDiv: RefObject<HTMLDivElement>;

@@ -1,0 +1,23 @@
+---
+import type { AlberoDocumenti } from "../../types/alberoAppunti";
+import Documento from "./documento.astro";
+
+const albero: AlberoDocumenti = Astro.props.albero;
+---
+
+{
+	albero.children.map((capitolo) => (
+		<>
+			<div class="capitolo">
+				<h2>{capitolo.data.titolo}</h2>
+				<a href={capitolo.data.url}>Vedi</a>
+			</div>
+
+			<div class="documenti">
+				{capitolo.children.map((doc) => (
+					<Documento documento={doc} />
+				))}
+			</div>
+		</>
+	))
+}

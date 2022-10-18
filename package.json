@@ -31,6 +31,7 @@
     "shiki": "^0.11.1",
     "slash": "^5.0.0",
     "to-vfile": "^7.2.3",
+    "unist-builder": "^3.0.0",
     "unist-util-filter": "^4.0.0",
     "unist-util-visit": "^4.1.1",
     "unist-util-visit-parents": "^5.1.1"

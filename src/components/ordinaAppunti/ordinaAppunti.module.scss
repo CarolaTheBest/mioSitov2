@@ -3,80 +3,80 @@
 $spessoreBordi: 3px;
 
 .comandi {
-  display: flex;
+	display: flex;
 }
 
 .fine {
-  margin-left: auto;
+	margin-left: auto;
 }
 
 .ordinamento {
-  display: flex;
-  border-radius: $bordiBottoni;
-  border: $spessoreBordi solid $colorePrincipale;
-  width: fit-content;
+	display: flex;
+	border-radius: $borderRarius;
+	border: $spessoreBordi solid $colorePrincipale;
+	width: fit-content;
 
-  div:first-child {
-    border-left: none;
-  }
+	div:first-child {
+		border-left: none;
+	}
 
-  div {
-    padding: $paddingBottoni;
-    cursor: pointer;
-    background-color: white;
-    border-left: $spessoreBordi solid $colorePrincipale;
-    transition: background-color $velocitaNormaleTransazione;
-    font-size: 0.9rem;
-    // display: flex;
-    align-items: center;
+	div {
+		padding: $paddingBottoni;
+		cursor: pointer;
+		background-color: white;
+		border-left: $spessoreBordi solid $colorePrincipale;
+		transition: background-color $velocitaNormaleTransazione;
+		font-size: 0.9rem;
+		// display: flex;
+		align-items: center;
 
-    &:hover {
-      background-color: $colorePrincipaleChiaro;
-    }
-  }
+		&:hover {
+			background-color: $colorePrincipaleChiaro;
+		}
+	}
 
-  div[data-attivo="true"] {
-    color: white;
-    background-color: $colorePrincipale;
-  }
+	div[data-attivo="true"] {
+		color: white;
+		background-color: $colorePrincipale;
+	}
 }
 
 @include tablet() {
-  .comandi {
-    flex-direction: column;
-    gap: 1rem;
-  }
+	.comandi {
+		flex-direction: column;
+		gap: 1rem;
+	}
 
-  .fine {
-    margin: 0;
-  }
+	.fine {
+		margin: 0;
+	}
 }
 
 @include telefono {
-  .ordinamento {
-    div {
-      padding: 0.7rem;
-    }
-  }
+	.ordinamento {
+		div {
+			padding: 0.7rem;
+		}
+	}
 }
 
 @include scuroBox {
-  .span {
-    color: $coloreTesto;
-  }
+	.span {
+		color: $coloreTesto;
+	}
 
-  .ordinamento {
-    div {
-      background-color: $coloreSfondoPiuChiaroScuro;
+	.ordinamento {
+		div {
+			background-color: $coloreSfondoPiuChiaroScuro;
 
-      &:hover {
-        background-color: $coloreSfondoScuro;
-      }
-    }
+			&:hover {
+				background-color: $coloreSfondoScuro;
+			}
+		}
 
-    div[data-attivo="true"] {
-      color: white;
-      background-color: $colorePrincipale;
-    }
-  }
+		div[data-attivo="true"] {
+			color: white;
+			background-color: $colorePrincipale;
+		}
+	}
 }

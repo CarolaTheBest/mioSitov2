@@ -3,81 +3,85 @@
 $animazione: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 
 .rigaTitolo {
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
+	display: flex;
+	align-items: baseline;
+	gap: 1rem;
 }
 
 .ultimaModifica {
-  color: $coloreDisattivato;
-  font-size: 0.9rem;
+	color: $coloreDisattivato;
+	font-size: 0.9rem;
 }
 
 .articolo {
-  border: 3px solid $coloreBordoGrigio;
-  margin: 1rem 0;
-  border-radius: $bordiBottoni;
-  background: linear-gradient(45deg, rgba($colorePrincipale, 0.05) 40%, white 60%);
-  background-size: 400%;
-  background-position: 100%;
-  transition: border-color $animazione, background-position $animazione;
+	border: 3px solid $coloreBordoGrigio;
+	margin: 1rem 0;
+	border-radius: $borderRarius;
+	background: linear-gradient(
+		45deg,
+		rgba($colorePrincipale, 0.05) 40%,
+		white 60%
+	);
+	background-size: 400%;
+	background-position: 100%;
+	transition: border-color $animazione, background-position $animazione;
 
-  &:hover {
-    background-position: 0;
-    border-color: $colorePrincipale;
-  }
+	&:hover {
+		background-position: 0;
+		border-color: $colorePrincipale;
+	}
 }
 
 .aContent {
-  text-decoration: none;
-  padding: 1em 2em;
-  display: block;
+	text-decoration: none;
+	padding: 1em 2em;
+	display: block;
 }
 
 .titolo {
-  font-size: 1.25rem;
-  display: block;
-  color: $coloreEvidenziato;
+	font-size: 1.25rem;
+	display: block;
+	color: $coloreEvidenziato;
 }
 
 .titolo::first-letter {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .descrizione {
-  margin-bottom: 0;
-  line-height: 1.35rem;
+	margin-bottom: 0;
+	line-height: 1.35rem;
 }
 
 .descrizione:after {
-  content: "...";
+	content: "...";
 }
 
 .link {
-  display: block;
-  color: $colorePrincipale;
-  margin-top: 1.2rem;
-  font-size: 0.8rem;
+	display: block;
+	color: $colorePrincipale;
+	margin-top: 1.2rem;
+	font-size: 0.8rem;
 }
 
 @include tablet {
-  .rigaTitolo {
-    flex-direction: column;
-  }
+	.rigaTitolo {
+		flex-direction: column;
+	}
 }
 
 @include scuroBox {
-  .articolo {
-    background-image: linear-gradient(
-      45deg,
-      rgba($colorePrincipale, 0.05) 40%,
-      $coloreSfondoPiuChiaroScuro 60%
-    );
+	.articolo {
+		background-image: linear-gradient(
+			45deg,
+			rgba($colorePrincipale, 0.05) 40%,
+			$coloreSfondoPiuChiaroScuro 60%
+		);
 
-    border-color: $coloreBarraSotto;
-  }
+		border-color: $coloreBarraSotto;
+	}
 
-  .titolo {
-    color: $coloreTestoScuro;
-  }
+	.titolo {
+		color: $coloreTestoScuro;
+	}
 }

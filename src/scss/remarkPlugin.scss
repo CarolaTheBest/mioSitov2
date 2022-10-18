@@ -3,49 +3,49 @@
 $spessoreBordo: 5px;
 
 .conteinerSpegazioni {
-  $paddingBox: 2rem;
+	$paddingBox: 2rem;
 
-  padding: 1rem;
-  margin: 2em 0;
-  margin-left: -$paddingBox;
-  padding-left: $paddingBox;
-  border-radius: $bordiBottoni;
+	padding: 1rem;
+	margin: 2em 0;
+	margin-left: -$paddingBox;
+	padding-left: $paddingBox;
+	border-radius: $borderRarius;
 
-  .intestazioneSpiegazione {
-    display: flex;
-    gap: 1em;
-    font-weight: bold;
-    align-items: center;
-    font-size: 1.25rem;
+	.intestazioneSpiegazione {
+		display: flex;
+		gap: 1em;
+		font-weight: bold;
+		align-items: center;
+		font-size: 1.25rem;
 
-    span::first-letter {
-      text-transform: uppercase;
-    }
+		span::first-letter {
+			text-transform: uppercase;
+		}
 
-    img {
-      height: 40px;
-    }
-  }
+		img {
+			height: 40px;
+		}
+	}
 }
 
 @include tablet {
-  .conteinerSpegazioni {
-    padding: 1rem;
-    margin: 1rem auto;
-  }
+	.conteinerSpegazioni {
+		padding: 1rem;
+		margin: 1rem auto;
+	}
 }
 
 @mixin box($nomeClasse, $colore) {
-  .#{$nomeClasse}Container {
-    background-color: mix($colore, rgb(236, 236, 236), 10%);
-    border-left: 5px solid $colore;
+	.#{$nomeClasse}Container {
+		background-color: mix($colore, rgb(236, 236, 236), 10%);
+		border-left: 5px solid $colore;
 
-    @include scuro {
-      & {
-        background-color: mix($colore, rgb(37, 37, 37), 15%);
-      }
-    }
-  }
+		@include scuro {
+			& {
+				background-color: mix($colore, rgb(37, 37, 37), 15%);
+			}
+		}
+	}
 }
 
 @include box("attenzione", red);
@@ -53,27 +53,27 @@ $spessoreBordo: 5px;
 @include box("notaBene", #e6a700);
 
 a {
-  color: $colorePrincipale;
+	color: $colorePrincipale;
 }
 
 pre > code {
-  display: grid;
+	display: grid;
 }
 
 code {
-  counter-reset: line;
+	counter-reset: line;
 }
 
 code > .line::before {
-  counter-increment: line;
-  content: counter(line);
+	counter-increment: line;
+	content: counter(line);
 
-  /* Other styling */
-  display: inline-block;
-  width: 1rem;
-  margin-right: 2rem;
-  text-align: right;
-  color: gray;
+	/* Other styling */
+	display: inline-block;
+	width: 1rem;
+	margin-right: 2rem;
+	text-align: right;
+	color: gray;
 }
 
 // pre[data-theme='dark'], code[data-theme='dark'] {
@@ -81,15 +81,15 @@ code > .line::before {
 // }
 
 pre[data-theme="light"] {
-  @include scuro {
-    display: none;
-  }
+	@include scuro {
+		display: none;
+	}
 }
 
 html:not(.night) pre[data-theme="dark"] {
-  display: none;
+	display: none;
 }
 
 .inizioDefinizione {
-  text-decoration: underline;
+	text-decoration: underline;
 }

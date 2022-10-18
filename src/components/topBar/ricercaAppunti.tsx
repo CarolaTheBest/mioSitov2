@@ -1,9 +1,9 @@
-import { Component, createRef, ReactNode, RefObject } from "react";
-import { PortalNav } from "../hambugerMobile/hamburgerMobile";
-import stile from "./ricercaAppunti.module.scss";
-import dizionario from "../../../dizionario.json";
 import pickBy from "lodash/pickBy";
 import values from "lodash/values";
+import { Component, createRef, ReactNode, RefObject } from "react";
+import dizionario from "../../../dizionario.json";
+import { PortalNav } from "../hambugerMobile/hamburgerMobile";
+import stile from "./ricercaAppunti.module.scss";
 
 export class RicercaAppunti extends Component<any, { visibile: boolean }> {
   constructor(props) {

@@ -1,135 +1,135 @@
 @import "../../scss/variabili.scss";
 
 .wrapper {
-  height: 100%;
-  width: 100%;
-  background-color: rgba($coloreBarraSotto, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	height: 100%;
+	width: 100%;
+	background-color: rgba($coloreBarraSotto, 0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .ricerca {
-  max-width: 70%;
-  max-height: 80%;
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: $bordiBottoni;
-  border: 2px solid $colorePrincipale;
-  display: flex;
-  width: 50vw;
-  min-height: 80vh;
-  flex-direction: column;
-  padding-top: 0.5rem;
+	max-width: 70%;
+	max-height: 80%;
+	background-color: white;
+	padding: 1.5rem;
+	border-radius: $borderRarius;
+	border: 2px solid $colorePrincipale;
+	display: flex;
+	width: 50vw;
+	min-height: 80vh;
+	flex-direction: column;
+	padding-top: 0.5rem;
 }
 
 @include desktopGrandi {
-  .ricerca {
-    width: 40vw;
-  }
+	.ricerca {
+		width: 40vw;
+	}
 }
 
 @include tablet {
-  .ricerca {
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-  }
+	.ricerca {
+		max-width: 100%;
+		width: 100%;
+		height: 100%;
+		max-height: 100%;
+	}
 }
 
 .barraRicerca {
-  display: flex;
-  border: 3px solid $colorePrincipale;
-  border-radius: $bordiBottoni;
-  padding: 1rem;
-  align-items: center;
+	display: flex;
+	border: 3px solid $colorePrincipale;
+	border-radius: $borderRarius;
+	padding: 1rem;
+	align-items: center;
 
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 
-  input {
-    border: none;
-    background: transparent;
-    appearance: none;
-    outline: none;
-    min-width: 20vw;
-    font-size: 1rem;
-    font: inherit;
-    flex-grow: 1;
-  }
+	input {
+		border: none;
+		background: transparent;
+		appearance: none;
+		outline: none;
+		min-width: 20vw;
+		font-size: 1rem;
+		font: inherit;
+		flex-grow: 1;
+	}
 }
 
 .chiudi {
-  display: flex;
-  justify-content: space-between;
-  margin: 1rem 0;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem 0;
+	align-items: center;
 
-  .titoloBox {
-    font-size: 1.5rem;
-  }
+	.titoloBox {
+		font-size: 1.5rem;
+	}
 
-  .icona {
-    display: flex;
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: all 100ms;
-    border-radius: 100px;
-    &:hover {
-      background-color: rgba($colorePrincipale, 0.1);
-    }
-  }
+	.icona {
+		display: flex;
+		cursor: pointer;
+		padding: 0.5rem;
+		transition: all 100ms;
+		border-radius: 100px;
+		&:hover {
+			background-color: rgba($colorePrincipale, 0.1);
+		}
+	}
 }
 
 .wrapperRisultati {
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
 
-  a {
-    text-decoration: none;
-  }
+	a {
+		text-decoration: none;
+	}
 }
 
 .elementoRisultato {
-  background-color: rgba($colorePrincipale, 0.1);
-  padding: 1rem;
-  margin: 0.5rem 0;
-  border-radius: $bordiBottoni;
-  border: 3px solid $colorePrincipale;
-  transition: all 100ms ease-in-out;
-  color: inherit;
-  cursor: pointer;
+	background-color: rgba($colorePrincipale, 0.1);
+	padding: 1rem;
+	margin: 0.5rem 0;
+	border-radius: $borderRarius;
+	border: 3px solid $colorePrincipale;
+	transition: all 100ms ease-in-out;
+	color: inherit;
+	cursor: pointer;
 
-  &:hover {
-    background-color: $colorePrincipale;
-    color: white;
-  }
+	&:hover {
+		background-color: $colorePrincipale;
+		color: white;
+	}
 }
 
 .inizioDefinizione {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 @include scuroBox {
-  .ricerca {
-    background-color: mix($coloreBarraSotto, black, 20%);
-    color: $coloreTestoScuro;
-  }
+	.ricerca {
+		background-color: mix($coloreBarraSotto, black, 20%);
+		color: $coloreTestoScuro;
+	}
 
-  .barraRicerca {
-    background-color: $coloreSfondoPiuChiaroScuro;
+	.barraRicerca {
+		background-color: $coloreSfondoPiuChiaroScuro;
 
-    input {
-      color: $coloreTestoScuro;
-    }
-  }
+		input {
+			color: $coloreTestoScuro;
+		}
+	}
 
-  .ricerca svg {
-    fill: $coloreTestoScuro;
-  }
+	.ricerca svg {
+		fill: $coloreTestoScuro;
+	}
 
-  .elementoRisultato {
-    background-color: $coloreSfondoPiuChiaroScuro;
-  }
+	.elementoRisultato {
+		background-color: $coloreSfondoPiuChiaroScuro;
+	}
 }

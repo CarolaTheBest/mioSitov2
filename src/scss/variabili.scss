@@ -14,7 +14,7 @@ $coloreDisattivato: rgb(155, 155, 155);
 $coloreBordoGrigio: rgb(221, 221, 221);
 $coloreSfondoCode: rgba(175, 184, 193, 0.2);
 
-$bordiBottoni: 5px;
+$borderRarius: 5px;
 
 $velocitaNormaleTransazione: 150ms;
 
@@ -28,53 +28,53 @@ $paddingDesktopGrandi: 16rem;
 $paddingBottoni: 0.7rem 1.75rem;
 
 @mixin telefono {
-  @media (max-width: 426px) {
-    @content;
-  }
+	@media (max-width: 426px) {
+		@content;
+	}
 }
 
 @mixin tablet {
-  @media (max-width: 769px) {
-    @content;
-  }
+	@media (max-width: 769px) {
+		@content;
+	}
 }
 
 @mixin desktopGrandi {
-  @media (min-width: 1440px) {
-    @content;
-  }
+	@media (min-width: 1440px) {
+		@content;
+	}
 }
 
 @mixin tabletConPadding {
-  @include tablet {
-    @content;
-  }
-  padding: 1rem;
+	@include tablet {
+		@content;
+	}
+	padding: 1rem;
 }
 
 @mixin paddingGenerale {
-  padding-left: $paddingNormale;
-  padding-right: $paddingNormale;
+	padding-left: $paddingNormale;
+	padding-right: $paddingNormale;
 
-  @include tablet {
-    padding-left: $paddingTablet;
-    padding-right: $paddingTablet;
-  }
+	@include tablet {
+		padding-left: $paddingTablet;
+		padding-right: $paddingTablet;
+	}
 
-  @include desktopGrandi {
-    padding-left: $paddingDesktopGrandi;
-    padding-right: $paddingDesktopGrandi;
-  }
+	@include desktopGrandi {
+		padding-left: $paddingDesktopGrandi;
+		padding-right: $paddingDesktopGrandi;
+	}
 }
 
 @mixin scuro {
-  html.night & {
-    @content;
-  }
+	html.night & {
+		@content;
+	}
 }
 
 @mixin scuroBox {
-  :global(html.night) {
-    @content;
-  }
+	:global(html.night) {
+		@content;
+	}
 }

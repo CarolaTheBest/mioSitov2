@@ -1,9 +1,8 @@
-import type { PostPreviewType } from "../types/types";
 import type { MarkdownHeading } from "astro";
 import { Octokit } from "octokit";
 import segreti from "../../segreti.json";
+import type { PostPreviewType } from "../types/types";
 //@ts-ignore
-import fs from "fs";
 //@ts-ignore
 import moment from "moment";
 moment.locale("it");

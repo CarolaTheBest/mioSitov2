@@ -1,8 +1,8 @@
 import { Component, createRef, ReactNode, RefObject } from "react";
-import stile from "./stileaTorino.module.scss";
+import { interagisciConScorrimento } from "../../functions/interagisci";
 import mia from "./immagini/mia.png";
 import mole from "./immagini/mole.png";
-import { interagisciConScorrimento } from "../../functions/interagisci";
+import stile from "./stileaTorino.module.scss";
 
 export class Atorino extends Component {
   ref: RefObject<any> = createRef();

@@ -2,9 +2,9 @@
 export interface Props {
   simboli: string[];
 }
+import katex,{ KatexOptions } from "katex";
 import "../scss/globale.scss";
 const { simboli } = Astro.props;
-import katex, { KatexOptions } from "katex";
 const opzioni: KatexOptions = { strict: false };
 ---
 

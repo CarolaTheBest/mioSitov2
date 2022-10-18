@@ -8,156 +8,156 @@ import "../scss/appunti.scss";
 import { RicercaAppunti } from "../components/topBar/ricercaAppunti";
 
 const titolo: string = Astro.props.headings.filter(
-  (titolo: any) => titolo.depth == 1
+	(titolo: any) => titolo.depth == 1
 )[0].text;
 const frontmatter = Astro.props.frontmatter;
 ---
 
 <link
-  href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
-  integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X"
-  crossorigin="anonymous"
-  onload="this.onload=null;this.rel='stylesheet'"
-  rel="preload"
-  as="style"
+	href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
+	integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X"
+	crossorigin="anonymous"
+	onload="this.onload=null;this.rel='stylesheet'"
+	rel="preload"
+	as="style"
 />
 
 <Layout title={titolo}>
-  <nav class="testa" id="barra">
-    <TopBar>
-      <div slot="elem-mobile-destra">
-        <div><RicercaAppunti client:visible /></div>
-      </div>
-    </TopBar>
-  </nav>
-  <main>
-    <div class="main">
-      <div class="articolo">
-        <div class="testata">
-          <h1 class="h1Titolo">{titolo}</h1>
-          <div class="icone">
-            <div class="print icona" onclick="window.print();">
-              <div class="svg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 48 48"
-                  fill="inherit"
-                  ><path
-                    d="M12.1 14.1V6h23.8v8.1Zm24.85 9.25q.6 0 1.05-.45.45-.45.45-1.05 0-.6-.45-1.05-.45-.45-1.05-.45-.6 0-1.05.45-.45.45-.45 1.05 0 .6.45 1.05.45.45 1.05.45ZM15.1 39h17.8v-9.6H15.1Zm-3 3v-8.8H4V20.9q0-2.25 1.525-3.775T9.3 15.6h29.4q2.25 0 3.775 1.525T44 20.9v12.3h-8.1V42Z"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="nascondi" />
-        <slot />
-      </div>
-      <div class="sideBar"><SideBarHeadings client:idle /></div>
-    </div>
-    <div>
-      {
+	<nav class="testa" id="barra">
+		<TopBar>
+			<div slot="elem-mobile-destra">
+				<div><RicercaAppunti client:visible /></div>
+			</div>
+		</TopBar>
+	</nav>
+	<main>
+		<div class="main">
+			<div class="articolo">
+				<div class="testata">
+					<h1 class="h1Titolo">{titolo}</h1>
+					<div class="icone">
+						<div class="print icona" onclick="window.print();">
+							<div class="svg">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 48 48"
+									fill="inherit"
+									><path
+										d="M12.1 14.1V6h23.8v8.1Zm24.85 9.25q.6 0 1.05-.45.45-.45.45-1.05 0-.6-.45-1.05-.45-.45-1.05-.45-.6 0-1.05.45-.45.45-.45 1.05 0 .6.45 1.05.45.45 1.05.45ZM15.1 39h17.8v-9.6H15.1Zm-3 3v-8.8H4V20.9q0-2.25 1.525-3.775T9.3 15.6h29.4q2.25 0 3.775 1.525T44 20.9v12.3h-8.1V42Z"
+									></path>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr class="nascondi" />
+				<slot />
+			</div>
+			<div class="sideBar"><SideBarHeadings client:idle /></div>
+		</div>
+		<div>
+			<!-- {
         frontmatter.formule.length > 0 ? (
           <TabellaSimboli simboli={frontmatter.formule} />
         ) : null
-      }
-    </div>
-  </main>
+      } -->
+		</div>
+	</main>
 </Layout>
 
 <style lang="scss">
-  @import "../scss/variabili.scss";
+	@import "../scss/variabili.scss";
 
-  .testata {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-  }
+	.testata {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+	}
 
-  @include tablet {
-    .testata {
-      flex-direction: column;
-    }
-  }
+	@include tablet {
+		.testata {
+			flex-direction: column;
+		}
+	}
 
-  .icone {
-    display: flex;
-    align-items: center;
-  }
+	.icone {
+		display: flex;
+		align-items: center;
+	}
 
-  .h1Titolo {
-    text-align: initial;
-    margin: 1rem 0;
-    max-width: 90%;
-  }
+	.h1Titolo {
+		text-align: initial;
+		margin: 1rem 0;
+		max-width: 90%;
+	}
 
-  .icona {
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 100px;
-    transition: all 250ms;
+	.icona {
+		cursor: pointer;
+		padding: 0.5rem;
+		border-radius: 100px;
+		transition: all 250ms;
 
-    &:is(:hover, :focus-within) {
-      background-color: mix($colorePrincipale, white, 15%);
-    }
-  }
+		&:is(:hover, :focus-within) {
+			background-color: mix($colorePrincipale, white, 15%);
+		}
+	}
 
-  .svg {
-    display: flex;
-    width: 100%;
+	.svg {
+		display: flex;
+		width: 100%;
 
-    svg {
-      width: 30px;
-      fill: $colorePrincipale;
-    }
-  }
+		svg {
+			width: 30px;
+			fill: $colorePrincipale;
+		}
+	}
 
-  main {
-    @include paddingGenerale;
-  }
+	main {
+		@include paddingGenerale;
+	}
 
-  .testa {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background-color: white;
-  }
+	.testa {
+		position: sticky;
+		top: 0;
+		z-index: 50;
+		background-color: white;
+	}
 
-  .main {
-    padding-top: 48px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    // max-width: 1100px;
-  }
+	.main {
+		padding-top: 48px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: flex-start;
+		// max-width: 1100px;
+	}
 
-  .sideBar {
-    position: sticky;
-    top: $altezzaBarra;
-    padding-bottom: 100px;
-    padding: $paddingContenuto 2rem;
-  }
+	.sideBar {
+		position: sticky;
+		top: $altezzaBarra;
+		padding-bottom: 100px;
+		padding: $paddingContenuto 2rem;
+	}
 
-  .articolo {
-    flex: 1 1 auto;
-    line-height: 1.75rem;
-    text-align: justify;
-    margin-bottom: 10rem;
-  }
+	.articolo {
+		flex: 1 1 auto;
+		line-height: 1.75rem;
+		text-align: justify;
+		margin-bottom: 10rem;
+	}
 
-  h2,
-  h3 {
-    scroll-margin-top: "10%";
-  }
+	h2,
+	h3 {
+		scroll-margin-top: "10%";
+	}
 
-  @media only screen and (max-width: 768px) {
-    .sideBar {
-      display: none;
-    }
-  }
+	@media only screen and (max-width: 768px) {
+		.sideBar {
+			display: none;
+		}
+	}
 
-  a {
-    color: $colorePrincipale;
-  }
+	a {
+		color: $colorePrincipale;
+	}
 </style>

@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  posts: Record<string, any>[];
+	posts: Record<string, any>[];
 }
 const { posts } = Astro.props;
 
@@ -11,100 +11,107 @@ import moment from "moment";
 moment.locale("it");
 
 function getTitolo(post: any): string {
-  return (
-    post.getHeadings()[post.getHeadings().findIndex((head: any) => head.depth == 1)]?.text ?? "non ancora definito"
-  );
+	return (
+		post.getHeadings()[
+			post.getHeadings().findIndex((head: any) => head.depth == 1)
+		]?.text ?? "non ancora definito"
+	);
 }
 ---
 
 <div class="articoli">
-  {
-    posts.map((post) => (
-      <article>
-        <a href={post.url}>
-          <div class="rigaTitolo">
-            <span class="titolo">{getTitolo(post)}</span>
-            <span class="ultimaModifica">
-              Ultima modifica - {moment(fs.statSync(post.file).mtime).format("DD MMMM YYYY")}
-            </span>
-          </div>
-          <p class="descrizione">{post.frontmatter.descrizione}</p>
-          <span class="link">Leggi tutto</span>
-        </a>
-      </article>
-    ))
-  }
+	{
+		posts.map((post) => (
+			<article>
+				<a href={post.url}>
+					<div class="rigaTitolo">
+						<span class="titolo">{getTitolo(post)}</span>
+						<span class="ultimaModifica">
+							Ultima modifica -{" "}
+							{moment(fs.statSync(post.file).mtime).format("DD MMMM YYYY")}
+						</span>
+					</div>
+					<p class="descrizione">{post.frontmatter.descrizione}</p>
+					<span class="link">Leggi tutto</span>
+				</a>
+			</article>
+		))
+	}
 </div>
 
 <style lang="scss">
-  @import "../scss/variabili.scss";
+	@import "../scss/variabili.scss";
 
-  $animazione: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	$animazione: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 
-  .rigaTitolo {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-  }
+	.rigaTitolo {
+		display: flex;
+		align-items: baseline;
+		gap: 1rem;
+	}
 
-  .ultimaModifica {
-    color: $coloreDisattivato;
-    font-size: 0.9rem;
-  }
+	.ultimaModifica {
+		color: $coloreDisattivato;
+		font-size: 0.9rem;
+	}
 
-  .articoli {
-    display: flex;
-    flex-direction: column;
-  }
+	.articoli {
+		display: flex;
+		flex-direction: column;
+	}
 
-  article {
-    border: 3px solid $coloreBordoGrigio;
-    margin: 1rem 0;
-    border-radius: $bordiBottoni;
-    background: linear-gradient(45deg, rgba($colorePrincipale, 0.05) 40%, white 60%);
-    background-size: 400%;
-    background-position: 100%;
-    transition: all $animazione;
-  }
+	article {
+		border: 3px solid $coloreBordoGrigio;
+		margin: 1rem 0;
+		border-radius: $borderRarius;
+		background: linear-gradient(
+			45deg,
+			rgba($colorePrincipale, 0.05) 40%,
+			white 60%
+		);
+		background-size: 400%;
+		background-position: 100%;
+		transition: all $animazione;
+	}
 
-  article:hover {
-    background-position: 0;
-    border-color: $colorePrincipale;
-  }
+	article:hover {
+		background-position: 0;
+		border-color: $colorePrincipale;
+	}
 
-  a {
-    text-decoration: none;
-    padding: 1em 2em;
-    display: block;
-  }
+	a {
+		text-decoration: none;
+		padding: 1em 2em;
+		display: block;
+	}
 
-  .titolo {
-    font-size: 1.25rem;
-    display: block;
-    color: $coloreEvidenziato;
-  }
+	.titolo {
+		font-size: 1.25rem;
+		display: block;
+		color: $coloreEvidenziato;
+	}
 
-  .wrapper {
-    @include paddingGenerale;
-  }
+	.wrapper {
+		@include paddingGenerale;
+	}
 
-  .titolo::first-letter {
-    text-transform: uppercase;
-  }
+	.titolo::first-letter {
+		text-transform: uppercase;
+	}
 
-  .descrizione {
-    margin-bottom: 0;
-    line-height: 1.35rem;
-  }
+	.descrizione {
+		margin-bottom: 0;
+		line-height: 1.35rem;
+	}
 
-  .descrizione:after {
-    content: "...";
-  }
+	.descrizione:after {
+		content: "...";
+	}
 
-  .link {
-    display: block;
-    color: $colorePrincipale;
-    margin-top: 1.2rem;
-    font-size: 0.8rem;
-  }
+	.link {
+		display: block;
+		color: $colorePrincipale;
+		margin-top: 1.2rem;
+		font-size: 0.8rem;
+	}
 </style>

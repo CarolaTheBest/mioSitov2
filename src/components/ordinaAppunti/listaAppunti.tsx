@@ -1,12 +1,12 @@
+import orderBy from "lodash/orderBy";
 import { Component, ReactNode } from "react";
 import type { PostPreviewType } from "../../types/types";
 import {
-  OrdinaAppunti,
-  OrdinamentoOpzioni,
-  OrdinamentoStringa,
+    OrdinaAppunti,
+    OrdinamentoOpzioni,
+    OrdinamentoStringa
 } from "./ordinaAppunti";
 import { SingoloAppunto } from "./singoloAppunto";
-import orderBy from "lodash/orderBy";
 
 export class ListaAppunti extends Component<
   { posts: PostPreviewType[] },

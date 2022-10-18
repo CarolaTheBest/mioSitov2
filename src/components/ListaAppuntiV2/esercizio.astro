@@ -1,0 +1,20 @@
+---
+import type { Esercizio } from "../../types/alberoAppunti";
+import BordiBelli from "./bordiBelli.astro";
+
+const esercizio: Esercizio = Astro.props.esercizio;
+---
+
+<BordiBelli>
+	<a class="wrapper" href={esercizio.data.url}>
+		<span class="titolo">{esercizio.data.titolo}</span>
+	</a>
+</BordiBelli>
+
+<style lang="scss">
+	.wrapper {
+		display: block;
+		padding: 1rem 2em;
+		text-decoration: none;
+	}
+</style>
